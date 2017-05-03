@@ -1,0 +1,90 @@
+<html>
+
+<head>
+
+    <title>Google Home Lab notifier</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="bulma.css">
+</head>
+
+<body>
+
+    <section class="hero is-fullheight is-primary">
+        <div class="hero-head">
+            <div class="container has-text-centered">
+
+
+            </div>
+        </div>
+
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title is-2"><a href="/"><strong>Google Home @Lab42</strong></a></h1>
+                <h1 class="title is-3"><a href="/">replace <strong>42</strong> by <strong>karant deuh</strong></a></h1>
+
+                <form method="POST">
+                    <div class="columns">
+                        <div class="column is-one-third is-offset-one-third">
+                            <div class="field">
+                                <p class="control">
+                                    <input class="input is-large" type="text" name="from" placeholder="From :">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="columns">
+                        <div class="column is-one-third is-offset-one-third">
+                            <div class="field">
+                                <p class="control">
+                                    <input class="input is-large" type="text" name="to" placeholder="To :">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="button is-warning is-large">Add</button>
+
+                </form>
+
+
+<div class="columns">
+    <div class="column is-one-third is-offset-one-third">
+               <table class="table is-striped">
+          <thead>
+            <tr>
+              <th>From</th>
+              <th>To</th>
+            </tr>
+          </thead>
+          <tbody>
+              <% for(var i=0; i<key.length; i++) { %>
+            <tr>
+              <td><%= key[i] %></td>
+              <td><%= phonetic[key[i]] %></td>
+            </tr>
+             <% } %>
+          </tbody>
+        </table>
+</div>
+</div>
+            </div>
+        </div>
+
+        <div class="hero-foot">
+            <div class="container">
+                <div class="has-text-centered">
+                    <span class="tag is-warning"><a href="/">Home</a></span>
+                    <span class="tag is-warning"><a href="/sound">Sounds</a></span>
+                </div>
+                <div class="tabs is-centered">
+                    <ul>
+                        <li><a>A wierd mix beetween bulma.io and google-home-notifier</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

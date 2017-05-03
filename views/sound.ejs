@@ -1,0 +1,84 @@
+<html>
+
+<head>
+
+    <title>Google Home Lab notifier</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="bulma.css">
+</head>
+
+<body>
+
+    <section class="hero is-fullheight is-primary">
+        <div class="hero-head">
+            <div class="container has-text-centered">
+
+
+            </div>
+        </div>
+
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title is-2"><a href="/"><strong>Google Home @Lab42</strong></a></h1>
+                <h1 class="title is-3">Sound<strong>Box</strong></h1>
+
+                <form method="POST">
+                    <div class="columns">
+                        <div class="column is-one-third is-offset-one-third">
+                            <div class="field">
+                                <p class="control">
+                                    <input class="input is-large" type="text" name="name" placeholder="Name :">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="columns">
+                        <div class="column is-one-third is-offset-one-third">
+                            <div class="field">
+                                <p class="control">
+                                    <input class="input is-large" type="text" name="url" placeholder="URL :">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="button is-warning is-large">Add</button>
+
+                </form>
+
+
+                <div class="columns">
+                    <% for(var i=0; i<key.length; i++) { %>
+                        <div class="column">
+                            <form action="/google-home-notifier" method="post">
+                                <button name="text" value="<%= sound[key[i]] %>"class="button is-warning">
+                                    <%= key[i] %>
+                                </button>
+                            </form>
+
+
+
+                        </div>
+                        <% } %>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-foot">
+            <div class="container">
+                <div class="has-text-centered">
+                    <span class="tag is-warning"><a href="/">Home</a></span>
+                    <span class="tag is-warning"><a href="/phonetic">Phonetics</a></span>
+                </div>
+                <div class="tabs is-centered">
+                    <ul>
+                        <li><a>A wierd mix beetween bulma.io and google-home-notifier</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
