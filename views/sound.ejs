@@ -47,21 +47,27 @@
 
                 </form>
 
-
-                <div class="columns">
+		<div class="container">
+                
                     <% for(var i=0; i<key.length; i++) { %>
+                        <% if(i%6 == 0) { %>
+                            <div class="columns has-text-centered">
+                        <% } %>
+                        
                         <div class="column">
                             <form action="/google-home-notifier" method="post">
                                 <button name="text" value="<%= sound[key[i]] %>"class="button is-warning">
                                     <%= key[i] %>
                                 </button>
                             </form>
-
-
-
                         </div>
+                        <% if(i%6 == 5) { %>
+                            </div>
                         <% } %>
-                </div>
+                        
+                        <% } %>
+                
+		</div>
             </div>
         </div>
 
